@@ -842,6 +842,11 @@ app.put("/admin/order/status/:id", async (req, res) => {
     res.status(500).json({ success: false, message: "Failed to update order" });
   }
 });
+
+app.get("/ping", (req, res) => {
+  res.status(200).send("pong");
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(5000, "0.0.0.0", () => {
   console.log("Server running on 0.0.0.0:5000");
